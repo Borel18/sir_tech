@@ -1,0 +1,43 @@
+.banner_sect{
+    width: 100%;
+    float: left;
+    background-image: url(../images/hotdeal.png);
+    height: auto;
+    background-size: 100%;
+    padding: 10px 0px 25px 0px;
+    background-repeat: no-repeat;
+    background-color: red;
+}
+.outstanding_txt {
+    width: 100%;
+    float: left;
+    font-size: 60px;
+    color:red;
+    padding-bottom: 0px;
+}
+
+.coffee_txt {
+    width: 100%;
+    float: left;
+    font-size: 70px;
+    color:black;
+    font-weight: bold;
+    padding-bottom: 0px;
+}
+
+.there_txt {
+    width: 50%;
+    float: left;
+    font-size: 16px;
+    color:black;
+    margin: 0px;
+    padding-bottom: 30px;
+}
+.about_taita {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color:red;
+    font-weight: bold;
+    text-transform: uppercase;
+}
