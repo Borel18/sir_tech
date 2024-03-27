@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\db.php';
+require_once 'include\db.php';
 
 if (isset($_GET['id']) && isset($_GET['token'])) {
 
@@ -9,7 +9,10 @@ $userId =(int)$_GET['id'];
 $token = $_GET['token'];
 
 
-$query = "SELECT * FROM user WHERE id = ? AND reset_token= ? AND reset_at > DATE_SUB(NOW(), INTERVAL 130 MINUTE) AND confirmed_at IS NOT NULL ";
+$query = "SELECT * FROM user WHERE id = ? 
+AND reset_token= ? 
+AND reset_at > DATE_SUB(NOW(), INTERVAL 130 MINUTE) 
+AND confirmed_at IS NOT NULL ";
 $req = $pdo->prepare($query);
 $req->execute([$userId, $token]);
 
@@ -55,7 +58,7 @@ if($user){
 
 ?>
 <?php
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\header3.php';
+require_once 'include\header3.php';
 
 
   ?>

@@ -24,7 +24,7 @@
 								<ul class="footer-links">
 <?php
 
- require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
+ require_once('config\commande.php');
 
  $Categorie = afficherCategorie();
 

@@ -1,5 +1,6 @@
 
 function lien(id, statut){
+    
 $.ajax({
     url:'statut.php?id='+id+'&statut='+statut,
     type:'GET',

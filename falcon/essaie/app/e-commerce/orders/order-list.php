@@ -68,7 +68,11 @@
             container.classList.add('container-fluid');
           }
         </script>
-        
+         <?php
+        //require_once 'dashbord.php'
+
+        ?>
+      
         <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-xl" style="display: none;">
           <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
           <a class="navbar-brand me-1 me-sm-3" href="../../../index.html">
@@ -924,12 +928,16 @@
                       <td class="py-2 align-middle white-space-nowrap text-end">
                         <div class="dropdown font-sans-serif position-static"><button class="btn btn-link text-600 btn-sm dropdown-toggle btn-reveal" type="button" id="order-dropdown-0" data-bs-toggle="dropdown" data-boundary="viewport" aria-haspopup="true" aria-expanded="false"><span class="fas fa-ellipsis-h fs--1"></span></button>
                           <div class="dropdown-menu dropdown-menu-end border py-0" aria-labelledby="order-dropdown-0">
+                            
+                            <div class="bg-white py-2">
                             <?php
-                            $livre="commande livré";
+                            $livre="livré";
                             $en_cour="en_cour";
                             $en_attente="en_attente";
                             ?>
-                            <div class="bg-white py-2"><a class="dropdown-item" name="livre" onclick="lien('<?= $loc->id ;?>','<?= $livre ;?>')" >livré</a><a class="dropdown-item" name="en_cour" onclick="lien('<?= $loc->id ;?>','<?= $en_cour ;?>')">en cour</a><a class="dropdown-item" name="en_attente" onclick="lien('<?= $loc->id ;?>','<?= $en_attente ;?>')">en attente</a>
+                              <a class="dropdown-item" name="livre" onclick="lien('<?= $loc->id ?>','<?= $livre ?>')" >commande livré</a>
+                              <a class="dropdown-item" name="en_cour" onclick="lien('<?= $loc->id ?>','<?= $en_cour ?>')">en cour</a>
+                              <a class="dropdown-item" name="en_attente" onclick="lien('<?= $loc->id ?>','<?= $en_attente ?>')">en attente</a>
                               
                             </div>
                           </div>
@@ -1146,7 +1154,7 @@
     <script src="../../../vendors/list.js/list.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-		<script src="main2.js"></script>
+		<script src="main3.js"></script>
   </body>
 
 

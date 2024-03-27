@@ -1,5 +1,5 @@
 <?php
-require_once ('C:\xampp\htdocs\sir_tech\acceuil\include\header.php');
+require_once ('include\header.php');
 
 ?>
       <!-- contact section start -->
@@ -41,6 +41,6 @@ require_once ('C:\xampp\htdocs\sir_tech\acceuil\include\header.php');
          </div>
       </div>
 <?php
-require_once ('C:\xampp\htdocs\sir_tech\acceuil\include\footer.php');
+require_once ('include\footer.php');
 
 ?>

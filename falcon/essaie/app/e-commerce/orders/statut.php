@@ -1,4 +1,6 @@
 <?php
+    
+
 if (isset($_GET['id']) && !empty($_GET['id']) && isset($_GET['statut']) && !empty($_GET['statut'])) {
     $id = strip_tags($_GET['id']);
     $statut = "annule";

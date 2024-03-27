@@ -7,7 +7,7 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 if(isset($_POST['fname']) && 
    isset($_POST['username']) ){
         
-    include "../db_conn.php";
+    include "..\include\db.php";
     
     $fname = $_POST['fname'];
     $username = $_POST['username'];
@@ -50,12 +50,16 @@ if(isset($_POST['fname']) &&
             
             
                // Insert into Database
-               $sql = "UPDATE user
-                       SET fname=?, username=?, pp=? 
-                       ";
-               $stmt = $conn->prepare($sql);
-               $stmt->execute([$fname, $username, $new_img_name]);
-               $_SESSION['auth']->fname= $fname;
+              $query= "UPDATE user SET fname = ?,username = ? ,pp = ? "; 
+              $pdo -> prepare($query)-> execute([$fname,$username,$new_img_name]);
+              
+              $_SESSION['auth']->fname= $fname;
+               // $sql = "UPDATE user
+               //         SET fname=?, username=?, pp=? 
+               //         ";
+               // $stmt = $conn->prepare($sql);
+               // $stmt->execute([$fname, $username, $new_img_name]);
+               // $_SESSION['auth']->fname= $fname;
                
               
                

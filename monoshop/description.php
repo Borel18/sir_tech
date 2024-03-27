@@ -4,7 +4,7 @@
 session_start();
 // inclure le header
 
-require_once('C:\xampp\htdocs\sir_tech\compte admin\include1\head.php');
+require_once('include1\head.php');
  
 // est ce que l'id existe et nest pas vide dans lurl
 if(isset($_GET['id']) && !empty($_GET['id'])){
@@ -64,5 +64,5 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
   </body>
   </html>
 <?php
-require_once('C:\xampp\htdocs\sir_tech\compte admin\include1\footer.php');
+require_once('include1\footer.php');
 ?>

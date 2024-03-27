@@ -1,5 +1,5 @@
 <?php
-require_once ('C:\xampp\htdocs\sir_tech\acceuil\include\header.php');
+require_once ('include\header.php');
 
 
 
@@ -60,5 +60,5 @@ require_once ('C:\xampp\htdocs\sir_tech\acceuil\include\header.php');
       </div>
       <!-- banner section end -->
 <?php
-require_once ('C:\xampp\htdocs\sir_tech\acceuil\include\footer.php');
+require_once ('include\footer.php');
 ?>

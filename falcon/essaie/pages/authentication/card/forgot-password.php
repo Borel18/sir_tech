@@ -2,8 +2,8 @@
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-require_once 'C:\xampp\htdocs\sir_tech\falcon\essaie\pages\authentication\card\include\db.php';
-require_once 'C:\xampp\htdocs\sir_tech\falcon\essaie\pages\authentication\card\include\fonctions.php';
+require_once 'include\db.php';
+require_once 'include\fonctions.php';
     
 // verifier si le formulaire est vide ou pas vide et lemail egualement nest pas vide
 if (!empty($_POST) && !empty($_POST['email'])) {
@@ -54,7 +54,7 @@ if ($user) {
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Falcon | Dashboard &amp; Web App Template</title>
+    <title>sir_techshop admin | Dashboard </title>
 
     <!-- ===============================================-->
     <!--    Favicons-->
@@ -111,7 +111,7 @@ if ($user) {
                     <div class="position-relative p-4 pt-md-5 pb-md-7 light">
                       <div class="bg-holder bg-auth-card-shape" style="background-image:url(../../../assets/img/icons/spot-illustrations/half-circle.png);"></div>
                       <!--/.bg-holder-->
-                      <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="../../../index.html">falcon</a>
+                      <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="#">sir_techshop admin</a>
                         <p class="opacity-75 text-white">With the power of Falcon, you can now focus only on functionaries for your digital products, while leaving the UI design on us!</p>
                       </div>
                     </div>

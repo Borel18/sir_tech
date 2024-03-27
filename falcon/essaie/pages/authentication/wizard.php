@@ -12,7 +12,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Falcon | Dashboard &amp; Web App Template</title>
+    <title>sir_techshop admin Dashboard &amp; Web App Template</title>
 
     <!-- ===============================================-->
     <!--    Favicons-->

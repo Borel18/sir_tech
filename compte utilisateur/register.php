@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\db.php';
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\fonctions.php';
+require_once 'include\db.php';
+require_once 'include\fonctions.php';
 if (!empty($_POST)) {
 
     $errors =[];
@@ -76,7 +76,7 @@ if(empty($_POST['fname']) || !preg_match("#^[a-zA-Z0-9_]+$#",$_POST['fname'])){
 ?>
 <?php
 
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\header3.php';
+require_once 'include\header3.php';
 ?>
     <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Création d'un compte</h5>
@@ -133,5 +133,5 @@ require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\header3.php';
                     </div>
                   </form>
                   <?php
-                  require_once('C:\xampp\htdocs\sir_tech\compte utilisateur\include\footer3.php');
+                  require_once('include\footer3.php');
                   ?>

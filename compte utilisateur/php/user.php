@@ -1,11 +1,14 @@
 <?php
-function getUserById($id,$db){
-    $sql = "SELECT * FROM user WHERE id= ?";
-    $stmt = $db->prepare($sql);
-    $stmt->execute([$id]);
+function getUserById($id,$pdo){
+    
+	$query = "SELECT * FROM user WHERE id= :id  ";
+    $req = $pdo->prepare($query);
+    $req ->execute(['id' => $id ]);
+											
+    
 
-    if($stmt->rowCount() == 1){
-        $user = $stmt->fetch();
+    if($req->rowCount() == 1){
+        $user = $req->fetch();
         return $user;
     }else {
        return 0; 

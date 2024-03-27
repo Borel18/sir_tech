@@ -25,7 +25,7 @@ function reconnect_auto(){
         if (!isset($pdo)) {
             global $pdo;
         }
-        $remember_token = $_COOKIE['remember'];
+        $remember_tokenz = $_COOKIE['remember'];
         $parts = explode("::",$remember_token);
         $userId = $parts[0];
         $req = $pdo->prepare("SELECT * FROM user WHERE id =?");
