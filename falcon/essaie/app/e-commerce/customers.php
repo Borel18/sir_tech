@@ -907,17 +907,18 @@ $result = $query->fetchAll(pdo::FETCH_ASSOC);
                       <td class="align-middle py-2" style="width: 28px;">
                         <div class="form-check fs-0 mb-0 d-flex align-items-center"><input class="form-check-input" type="checkbox" id="customer-1" data-bulk-select-row="data-bulk-select-row" /></div>
                       </td>
-                      <td class="name align-middle white-space-nowrap py-2"><a href="customer-details.html">
+                      <td class="name align-middle white-space-nowrap py-2"><a href="#">
                           <div class="d-flex d-flex align-items-center">
                             <div class="avatar avatar-xl me-2">
-                              <img class="rounded-circle" src="../../assets/img/team/pp" alt="" />
+                              <img class="rounded-circle" src="..\..\..\..\compte utilisateur\upload\<?= $user['pp']?>" 
+                              alt="" />
                             </div>
                             <div class="flex-1">
                               <h5 class="mb-0 fs--1"><?= $user['name']?></h5>
                             </div>
                           </div>
                         </a></td>
-                      <td class="email align-middle py-2"><a href=" #"><?= $user['email']?></a></td>
+                      <td class="email align-middle py-2"><a href="&"><?= $user['email']?></a></td>
                       <td class="phone align-middle white-space-nowrap py-2"><a href="#"><?= $user['tel']?></a></td>
                       <td class="address align-middle white-space-nowrap ps-5 py-2"><?= $user['city']?>,<?= $user['pays']?></td>
                       <td class="joined align-middle py-2"><?= $user['date']?></td>

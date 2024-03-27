@@ -1,8 +1,8 @@
 <?php
 session_start();
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\header3.php';
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\db.php';
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\fonctions.php';
+    require_once 'include\header3.php';
+    require_once 'include\db.php';
+    require_once 'include\fonctions.php';
     
     reconnect_auto();  
 
@@ -68,6 +68,6 @@ session_start();
                     </div>
                   </form>
     <?php
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\footer3.php';
+require_once 'include\footer3.php';
 ?>
 

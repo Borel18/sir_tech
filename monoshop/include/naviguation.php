@@ -9,7 +9,7 @@
 						<li class="active"><a href="index.php">Home</a></li>
 						<li><a href="solde.php">Hot Deals</a></li>
 						<li><a href="listecategorie.php">Categories</a></li>
-						<li><a href="allproducts.php">visiter tout nos produits</a></li>
+						<!-- <li><a href="allproducts.php">visiter tout nos produits</a></li> -->
 						
 					</ul>
 					<!-- /NAV -->

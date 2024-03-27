@@ -1,13 +1,13 @@
 <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\header.php');
- require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
+require_once('include\header.php');
+ require_once('config\commande.php');
 
  $Categorie = afficherCategorie();
 
 
 ?>
 <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
+require_once('include\naviguation.php');
 
 ?>
 
@@ -41,5 +41,5 @@ require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
 		<!-- /SECTION -->
 
  <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\footer.php');
+require_once('include\footer.php');
 ?>

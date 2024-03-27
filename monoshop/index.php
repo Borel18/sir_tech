@@ -1,13 +1,13 @@
 <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\header.php');
- require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
+require_once('include\header.php');
+ require_once('config\commande.php');
 
  $Categorie = afficherCategorie();
 
 
 ?>
 <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
+require_once('include\naviguation.php');
 
 ?>
 
@@ -42,7 +42,7 @@ require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
 
 <?php
 
- require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
+ require_once('config\commande.php');
 
  $Produits = afficher();
 
@@ -199,11 +199,11 @@ require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
 
 		<?php
 
- require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
+ require_once('config\commande.php');
 
  $Solde = afficherSolde();
 
-
+ $Categorie = afficherCategorie();
 ?>
 		<!-- SECTION -->
 		<div class="section">
@@ -218,10 +218,14 @@ require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
 							<h3 class="title">Solde</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab2">Accessories</a></li>
+								<li class="active"><a data-toggle="tab" href="#tab2">HOT DEALS</a></li>
+								<?php foreach($Categorie as $categorie): ?>
+
+									<li><a   href="categorie.php?nom=<?= $categorie->nom ?>"><?= $categorie->nom ?></a></li>
+
+								<?php endforeach; ?>
+
+
 								</ul>
 							</div>
 						</div>
@@ -298,5 +302,5 @@ require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
 		<!-- /SECTION -->
 
 <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\footer.php');
+require_once('include\footer.php');
 ?>

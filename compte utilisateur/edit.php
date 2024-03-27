@@ -3,6 +3,7 @@ session_start();
 
 if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
  include "db_conn.php";
+ require_once 'include\db.php';
  include 'php/user.php';
 
  $user = getUserById($_SESSION['auth']->id,$conn);
@@ -19,6 +20,7 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 </head>
 <body>
     <?php
+	
     if ($user) {?>
         
     
@@ -43,7 +45,7 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 			</div>
 		    <?php } ?>
 		  <div class="mb-3">
-		    <label class="form-label">Full Name</label>
+		    <label class="form-label">Full Nam </label>
 		    <input type="text" 
 		           class="form-control"
 		           name="fname"

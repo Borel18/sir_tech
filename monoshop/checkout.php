@@ -1,8 +1,8 @@
 
 <?php
 session_abort();
-require_once 'C:\xampp\htdocs\sir_tech\monoshop\include\db.php';
-require_once 'C:\xampp\htdocs\sir_tech\monoshop\include\fonctions.php';
+require_once 'include\db.php';
+require_once 'include\fonctions.php';
 
 
 //echo("veillez remplir ces informations pour enregistrer votre commande");
@@ -232,8 +232,8 @@ if (!empty($_SESSION['erreur'])) {
 	$a=$_SESSION['erreur'];
 }
 
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\header.php');
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
+require_once('include\header.php');
+require_once('include\naviguation.php');
 
 //var_dump($a);
 
@@ -473,6 +473,6 @@ unset($_SESSION['erreur']);
 		<!-- /NEWSLETTER -->
 
         <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\footer.php');
+require_once('include\footer.php');
 
 ?>

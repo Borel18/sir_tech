@@ -1,9 +1,9 @@
 <?php
 session_start();
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\fonctions.php';
+    require_once 'include\fonctions.php';
     reconnect_auto();
     is_connect();
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\header.php';
+    require_once 'include\header.php';
 ?>
 <?php
 if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
@@ -22,25 +22,18 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 </div>
 
 <?php
- require_once('connect2.php');
-
+require_once 'include\db.php';
+require_once 'include\fonctions.php';
+ 
+ 
      $email_cust=$_SESSION['auth'] ->email;
-     $sql = 'SELECT * FROM `commande` WHERE `email_cust` = :email_cust;';
 
-     //on prepare la requete
-     $query = $db->prepare($sql);
+ $query = "SELECT * FROM commande WHERE email_cust = :email_cust ";
+ $req = $pdo->prepare($query);
+ $req ->execute(['email_cust' => $email_cust ]);
+ $custumer = $req->fetchAll();
 
-     // on "acroche" les parametres (id)
-     $query->bindvalue(':email_cust', $email_cust, PDO::PARAM_STR);
      
-     //on execute la requete
-     $query->execute();
-
-     // on recupere la requete
-     $custumer = $query->fetchAll();
-	 
-		// var_dump($custumer);	
-	 
     
 ?>
 
@@ -78,43 +71,42 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
                                    
                                         <?php 
                                         foreach ($custumer as $prod) {
-                                            $id_com=$prod['id'];
+                                            $id_com=$prod->id;
 											$statut= "annule";
-											// var_dump($prod['id']);
-                                            // var_dump($id_com);
-                                            $sql = 'SELECT * FROM `com_produit` WHERE `id_com` = :id_com AND statut != :statut ;';
+											require_once 'include\db.php';
+											$query = "SELECT * FROM com_produit WHERE id_com = :id_com AND statut != :statut ";
+                                            $req = $pdo->prepare($query);
+                                            $req ->execute(['id_com' => $id_com ,'statut' => $statut]);
+											
+                                            $historique = $req->fetchAll();
 
-                                            //on prepare la requete
-                                            $query = $db->prepare($sql);
-
-                                            // on "acroche" les parametres (id)
-                                            $query->bindvalue(':id_com', $id_com, PDO::PARAM_INT);
-											$query->bindvalue(':statut', $statut, PDO::PARAM_STR);
-     
-                                            //on execute la requete
-                                            $query->execute();
-
-                                            // on recupere la requete
-                                            $historique = $query->fetchAll();
                                             
-                                           // var_dump($historique);
-
                                              foreach ($historique as $hist) {
-												$id=$hist['id_prod'];
+												$id=$hist->id_prod;
+												require_once 'include\db.php';
+											    $query = "SELECT * FROM produits WHERE id = :id ";
+                                                $req = $pdo->prepare($query);
+                                                $req ->execute(['id' => $id ]);
+                                                $produits = $req->fetch();
+
+
+
                                             
-												$sql = 'SELECT * FROM `produits` WHERE `id` = :id;';
+												// $sql = 'SELECT * FROM `produits` WHERE `id` = :id;';
 	  
-												//on prepare la requete
-												$query = $db->prepare($sql);
+												// //on prepare la requete
+												// $query = $db->prepare($sql);
 	  
-												// on "acroche" les parametres (id)
-												$query->bindvalue(':id', $id, PDO::PARAM_INT);
+												// // on "acroche" les parametres (id)
+												// $query->bindvalue(':id', $id, PDO::PARAM_INT);
 		 
-												//on execute la requete
-												$query->execute();
+												// //on execute la requete
+												// $query->execute();
 	  
-												// on recupere la requete
-												$produits = $query->fetch();
+												// // on recupere la requete
+												// $nom=$produits->nom;
+												
+												// $produits = $query->fetch();
 												?>
 											   
 										    
@@ -130,16 +122,16 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
                                                   object-fit:cover;
 
 												"
-												src="..\monoshop\<?= $produits['image']?>" alt="">
+												src="..\monoshop\<?= $produits->image?>" alt="">
 												<div class="product-label">
-													<span class="sale"><?= $hist['statut']; ?></span>
-													<span class="new"><?= $prod['date']?></span>
+													<span class="sale"><?= $hist->statut; ?></span>
+													<span class="new"><?= $prod->date?></span>
 												</div>
 											</div>
 											<div class="product-body">
 												<p class="product-category"></p>
-												<h3 class="product-name"><a href="#"><?= $produits['nom']?></a></h3>
-												<h4 class="product-price"><?= $produits['prix']?><del class="product-old-price"></del></h4>
+												<h3 class="product-name"><a href="#"><?= $produits->nom?></a></h3>
+												<h4 class="product-price"><?= $produits->prix?><del class="product-old-price"></del></h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
@@ -151,7 +143,7 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 											</div>
 											<div class="add-to-cart ">
 											
-											   <button class="add-to-cart-btn addpanier" onclick="lien(<?= $hist['id']; ?>)" ><i class="fa fa-shopping-cart"></i>annuler la commande</button>
+											   <button class="add-to-cart-btn addpanier" onclick="lien(<?= $hist->id; ?>)" ><i class="fa fa-shopping-cart"></i>annuler la commande</button>
 											
 											
 										    
@@ -199,7 +191,7 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 	?>
         
 <?php
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\footer3.php';
+require_once 'include\footer3.php';
 ?>
 <?php }else {
 	header("Location: login.php");

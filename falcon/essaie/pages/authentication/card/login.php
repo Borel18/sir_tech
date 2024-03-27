@@ -1,8 +1,8 @@
 <?php
 session_start();
     
-    require_once 'C:\xampp\htdocs\sir_tech\falcon\essaie\pages\authentication\card\include\db.php';
-    require_once 'C:\xampp\htdocs\sir_tech\falcon\essaie\pages\authentication\card\include\fonctions.php';
+    require_once 'include\db.php';
+    require_once 'include\fonctions.php';
     
     reconnect_auto();  
 
@@ -75,7 +75,7 @@ session_start();
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>Falcon | Dashboard &amp; Web App Template</title>
+    <title>sir_techshop admin Dashboard </title>
 
     <!-- ===============================================-->
     <!--    Favicons-->

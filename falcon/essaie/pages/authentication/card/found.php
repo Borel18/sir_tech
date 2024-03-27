@@ -53,7 +53,7 @@ if(session_status() == PHP_SESSION_NONE){
       <section class="section error-404 min-vh-100 d-flex flex-column align-items-center justify-content-center">
         <h1>NOT FOUND</h1>
         <h2>la page que vous cgercher ne vous est pas autorisé.</h2>
-        <a class="btn" href="register.php">crerr votre compte</a>
+        <a class="btn" href="register.php">créer votre compte</a>
         <img src="assets/img/not-found.svg" class="img-fluid py-5" alt="Page Not Found">
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->

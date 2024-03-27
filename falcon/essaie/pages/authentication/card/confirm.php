@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\db.php';
+require_once 'include\db.php';
 $userId =(int)$_GET['id'];
 $token = $_GET['token'];
 

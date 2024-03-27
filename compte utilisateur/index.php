@@ -1,9 +1,9 @@
 <?php
 session_start();
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\fonctions.php';
+    require_once 'include\fonctions.php';
     reconnect_auto();
     is_connect();
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\header.php';
+    require_once 'include\header.php';
 ?>
 <?php
 if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
@@ -50,7 +50,7 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 	?>
         
 <?php
-require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\footer3.php';
+require_once 'include\footer3.php';
 ?>
 <?php }else {
 	header("Location: login.php");
