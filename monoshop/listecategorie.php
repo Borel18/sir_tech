@@ -1,13 +1,15 @@
 <?php
-require_once('include\header.php');
- require_once('config\commande.php');
+require_once __DIR__. '/include\header.php';
+require_once __DIR__. '/config\commande.php';
+
 
  $Categorie = afficherCategorie();
 
 
 ?>
 <?php
-require_once('include\naviguation.php');
+require_once __DIR__. '/include\naviguation.php';
+
 
 ?>
 
@@ -41,5 +43,6 @@ require_once('include\naviguation.php');
 		<!-- /SECTION -->
 
  <?php
-require_once('include\footer.php');
+require_once __DIR__. '/include\footer.php';
+
 ?>

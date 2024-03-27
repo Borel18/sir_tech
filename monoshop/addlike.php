@@ -1,6 +1,9 @@
 <?php
-require '_header.php';
-require_once('config\connexion.php');
+
+require_once __DIR__. '/_header.php';
+require_once __DIR__. '/config/connexion.php';
+
+
 // $req = $access->prepare("SELECT * FROM produits ORDER BY id DESC");
 // $req->execute();
 

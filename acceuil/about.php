@@ -1,5 +1,5 @@
 <?php
-require_once ('include\header.php');
+require_once __DIR__. '/include/header.php';
 
 ?>
       <!-- about section start -->
@@ -22,6 +22,6 @@ require_once ('include\header.php');
       </div>
       <!-- about section end -->
 <?php
-require_once ('include\footer.php');
+require_once __DIR__. '/include\footer.php';
 
 ?>

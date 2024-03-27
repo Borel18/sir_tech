@@ -1,12 +1,15 @@
 <?php
-require_once('include\header.php');
- require_once('config\commande.php');
+require_once __DIR__. '/include/header.php';
+require_once __DIR__. '/config/commande.php';
+
 
  
 
 ?>
 <?php
-require_once('include\naviguation.php');
+require_once __DIR__. '/include/naviguation.php';
+
+// require_once('include\naviguation.php');
 $Produits = afficher();
 
 ?>

@@ -1,9 +1,8 @@
 <?php
-require_once 'include\fonctions.php';
+require_once __DIR__. '/include\fonctions.php';
+require_once __DIR__. '/include\header.php';
+require_once __DIR__. '/include\naviguation.php';
 
-require_once('include\header.php');
- 
-require_once('include\naviguation.php');
  
 // reconnect_auto();
 // echo($_COOKIE[]);
@@ -11,7 +10,9 @@ require_once('include\naviguation.php');
 ?>
 <?php
 if(isset($_GET['del'])){
-	require_once('config\connexion.php');
+require_once __DIR__. '/config\connexion.php';
+
+	
 	$getid= (int)$_GET['del'];
 	
 	$sessionid= 4;
@@ -123,6 +124,6 @@ if(isset($_GET['del'])){
 		</div>
 		<!-- /SECTION -->
         <?php
-require_once('include\footer.php');
-
+require_once __DIR__. '/include\footer.php';
+		
 ?>

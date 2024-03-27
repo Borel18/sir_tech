@@ -1,7 +1,7 @@
 <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\header.php');
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\naviguation.php');
-require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
+require_once __DIR__. '/include\header.php';
+require_once __DIR__. '/include\naviguation.php';
+require_once __DIR__. '/config\commande.php';
 
 ?>
 <!-- BREADCRUMB -->
@@ -33,7 +33,8 @@ require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
  
 // est ce que l'id existe et nest pas vide dans lurl
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect2.php');
+require_once __DIR__. '/connect2.php';
+
 
          // on nettoie l'id envoye
          $id = strip_tags($_GET['id']);
@@ -144,8 +145,8 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
 									</div>
 								</div>
 <?php
+require_once __DIR__. '/config\commande.php';
 
-require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
 
 $Produits = afficher();
 
@@ -426,7 +427,7 @@ $Produits = afficher();
 										</div>
 										<!-- /Review Form -->
 <?php
-require 'connect2.php';
+require_once __DIR__. '/connect2.php';
 if ($_SERVER["REQUEST_METHOD"]=="POST") {
 	$username = $_POST['username'];
 	$email = $_POST['email'];
@@ -469,8 +470,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 
  <?php
-
- require_once('C:\xampp\htdocs\sir_tech\monoshop\config\commande.php');
+require_once __DIR__. '/config\commande.php';
 
  $Produits = afficher();
 
@@ -573,5 +573,5 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 		<!-- /NEWSLETTER -->
 
 <?php
-require_once('C:\xampp\htdocs\sir_tech\monoshop\include\footer.php');
+require_once __DIR__. '/include\footer.php';
 ?>

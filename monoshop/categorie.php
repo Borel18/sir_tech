@@ -1,6 +1,7 @@
 <?php
+require_once __DIR__. '/include/header.php';
 
-require_once('include\header.php');
+
 
 if(isset($_GET['nom']) && !empty($_GET['nom'])){
     include("connexion.php");
@@ -27,7 +28,9 @@ if(isset($_GET['nom']) && !empty($_GET['nom'])){
 }
 ?>
 <?php
-require_once('include\naviguation.php');
+require_once __DIR__. '/include/naviguation.php';
+
+// require_once('include\naviguation.php');
 
 ?>
 
@@ -126,5 +129,7 @@ require_once('include\naviguation.php');
 		</div>
 		<!-- /SECTION -->
 <?php
-require_once('include\footer.php');
+require_once __DIR__. '/include/footer.php';
+
+
 ?>

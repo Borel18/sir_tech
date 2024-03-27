@@ -1,7 +1,6 @@
 <?php
-require_once('include\header.php');
-require_once('include\naviguation.php');
-
+require_once __DIR__. '/include\header.php';
+require_once __DIR__. '/include\naviguation.php';
 
 ?>
 <!-- BREADCRUMB -->
@@ -127,6 +126,7 @@ require_once('include\naviguation.php');
 		<!-- /NEWSLETTER -->
 
         <?php
-require_once('include\footer.php');
+require_once __DIR__. '/include\footer.php';
+
 
 ?>

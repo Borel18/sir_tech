@@ -1,9 +1,9 @@
 
 <?php
 session_abort();
-require_once 'include\db.php';
-require_once 'include\fonctions.php';
 
+require_once __DIR__. '/include/db.php';
+require_once __DIR__. '/include/fonctions.php';
 
 //echo("veillez remplir ces informations pour enregistrer votre commande");
 $_SESSION['erreur'] = "";
@@ -33,7 +33,9 @@ if ( !empty($_POST['username'])  && !empty($_POST['check']) && !empty($_POST['pa
 			$pp
 			]);
 		$_SESSION['auth'] = $user;
-		require('include\header2.php');
+        require_once __DIR__. '/include/header2.php';
+		
+		// require('include\header2.php');
 
 
 
@@ -50,7 +52,9 @@ if ( !empty($_POST['username'])  && !empty($_POST['check']) && !empty($_POST['pa
 										
 								   
 		if (isset($_SESSION['panier']) && !empty($_SESSION['panier'])) {
-		   require_once('connect2.php'); 
+		   
+		   require_once __DIR__. '/connect2.php';
+
 		   $email_cust= strip_tags($user->email);
 		   $prix_total = strip_tags($panier->total());
    
@@ -157,10 +161,9 @@ if(empty($_POST['name']) || !preg_match("#^[a-zA-Z0-9_]+$#",$_POST['name'])){
 		$custumer = $pdo -> lastInsertId();
 		
 		// 
+		require_once __DIR__. '/include/header2.php';
 		
-		require('include\header2.php');
-
-
+		
 
 		$bdd=new PDO('mysql:host=localhost;dbname=espace_membre','root','');
 		$ids=array_keys($_SESSION['panier']);
@@ -231,9 +234,9 @@ if (!empty($_SESSION['erreur'])) {
 	# code...
 	$a=$_SESSION['erreur'];
 }
+require_once __DIR__. '/include/header.php';
+require_once __DIR__. '/include/naviguation.php';
 
-require_once('include\header.php');
-require_once('include\naviguation.php');
 
 //var_dump($a);
 
@@ -473,6 +476,8 @@ unset($_SESSION['erreur']);
 		<!-- /NEWSLETTER -->
 
         <?php
-require_once('include\footer.php');
+require_once __DIR__. '/include/footer.php';
+
+// require_once('include\footer.php');
 
 ?>

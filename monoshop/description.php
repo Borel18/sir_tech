@@ -3,12 +3,15 @@
 // demarer la session
 session_start();
 // inclure le header
+require_once __DIR__. '/include1/head.php';
 
-require_once('include1\head.php');
+// require_once('include1\head.php');
  
 // est ce que l'id existe et nest pas vide dans lurl
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect2.php');
+require_once __DIR__. '/connect2.php';
+
+    // require_once('connect2.php');
 
          // on nettoie l'id envoye
          $id = strip_tags($_GET['id']);
@@ -64,5 +67,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
   </body>
   </html>
 <?php
-require_once('include1\footer.php');
+require_once __DIR__. '/include1/footer.php';
+
+
 ?>

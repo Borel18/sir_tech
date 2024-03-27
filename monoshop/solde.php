@@ -1,13 +1,13 @@
 <?php
-require_once('include\header.php');
- require_once('config\commande.php');
+require_once __DIR__. '/include\header.php';
+require_once __DIR__. '/config\commande.php';
 
  $Categorie = afficherCategorie();
 
 
 ?>
 <?php
-require_once('include\naviguation.php');
+require_once __DIR__. '/include\naviguation.php';
 
 ?>
 
@@ -18,9 +18,9 @@ require_once('include\naviguation.php');
 		<!-- /HOT DEAL SECTION -->
 
 		<?php
+require_once __DIR__. '/config\commande.php';
 
- require_once('config\commande.php');
-
+ 
  $Solde = afficherSolde();
 
 
@@ -59,7 +59,9 @@ require_once('include\naviguation.php');
 									<?php foreach($Solde as $solde): ?>
                                         <?php 
 											$id=$solde->id;
-											if (require("connexion.php")) {
+
+
+											if (require_once __DIR__. '/connexion.php') {
 											$likes = $access->prepare("SELECT id_like FROM likes WHERE id_article =?");
 											$likes->execute(array($id));
 											$likes = $likes->rowCount();
@@ -126,5 +128,6 @@ require_once('include\naviguation.php');
 		<!-- /SECTION -->
 
 <?php
-require_once('include\footer.php');
+require_once __DIR__. '/include\footer.php';
+
 ?>
