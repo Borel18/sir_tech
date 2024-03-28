@@ -2,7 +2,7 @@
   // demarer une session
 
   session_start(); 
-  require_once('connect2.php');
+  require_once __DIR__. '/connect2.php';
    
   if($_POST){
       if( !empty($_POST['image'])
@@ -40,7 +40,8 @@
          $query->execute();
 
          $_SESSION['message'] = "produit ajoute ajouter";
-         require("connexion.php");
+  require_once __DIR__. '/connexion.php';
+
          $req = $access->prepare("SELECT  email FROM user ORDER BY id DESC");
          $req->execute();
          
@@ -157,11 +158,27 @@
                   <div class="col-auto fs--1 text-600"><span class="mb-0 undefined">Have an account?</span> <span><a href="login.html">Login</a></span></div>
                 </div>
                 <?php
-                    require_once('config\commande.php');
+                    require_once __DIR__. '/config/commande.php';
 
+                   
                     $Categorie = afficherCategorie();
+                    require_once __DIR__. '/connect2.php';
 
-                    $types = affichertype();
+
+                    // on nettoie l'id envoy&
+                    
+                    $sql = 'SELECT * FROM `type` ;';
+                    
+                    //on prepare la requete
+                    $query = $db->prepare($sql);
+                    // on "acroche" les parametres (id)
+                         
+                    //on execute la requete
+                    $query->execute();
+                
+                    // on recupere la requete
+                    $types = $query->fetchAll();
+                    
 
 
                 ?>
@@ -180,7 +197,7 @@
                   <select name="type" id="" class="form-control" placeholder="veillez choisir la categorie">
                   <?php foreach($types as $type): ?>
 
-                  <option value="<?= $type->nom ?>" ><?= $type->nom ?></option>
+                  <option value="<?= $type['nom'] ?>" ><?= $type['nom'] ?></option>
                   <?php endforeach; ?>   
                   </select><br><br> 
                   <div class="mb-3"><button class="btn btn-primary d-block w-100 mt-3" type="submit" name="submit">ajouter</button></div>

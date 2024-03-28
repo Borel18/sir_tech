@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'pages\authentication\card\include\fonctions.php';
+require_once __DIR__. '/pages/authentication/card/include/fonctions.php';
+
 
 reconnect_auto();
 is_connect();
@@ -88,7 +89,7 @@ is_connect();
 
 
         <?php
-        require_once 'dashbord.php'
+        require_once __DIR__. '/dashbord.php';
 
         ?>
 

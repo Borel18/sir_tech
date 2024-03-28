@@ -1,0 +1,23 @@
+.dres{
+    
+    background-color: rgb(234, 228, 228);
+    
+    height: 400px;
+
+
+
+}
+.res{
+    color:  2px solid white;
+    margin-right: 2px;
+        background-color: rgb(163, 161, 161);
+        color: #fff;
+		height: 40px;
+
+    
+    
+}
+.res:hover {
+    background-color:blue;
+    color: #fff;
+}

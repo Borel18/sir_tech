@@ -6,7 +6,8 @@ if (isset($valider) && !empty(trim($keywords))) {
 	$words= explode(" ",trim($keywords));
 	for ($i=0; $i<count($words) ; $i++) 
 		$kw[$i]="nom like '%".$words[$i]."%'";
-	include("connexion.php");
+require_once __DIR__. '/connexion.php';
+
 	$res=$access->prepare("SELECT*FROM produits WHERE ".implode(" and ",$kw));
 	$res->setFetchMode(PDO::FETCH_ASSOC);
 	$res->execute();

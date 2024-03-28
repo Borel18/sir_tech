@@ -14,7 +14,8 @@ if (!empty($_POST['id'])
     && !empty($_POST['type'])) {
 
         // inclut la connexion a la base
-        require_once('connect2.php');
+        require_once __DIR__. '/connect2.php';
+
 
         // on nettoie les donnes envoyes
         $id = strip_tags($_POST['id']);
@@ -51,7 +52,8 @@ if (!empty($_POST['id'])
 }
 //  verification de lexistence de l'id
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect2.php');
+  require_once __DIR__. '/connect2.php';
+
 
     // on nettoie l'id envoy&
     $id = strip_tags($_GET['id']);
@@ -162,13 +164,28 @@ header('location:product-list.php');
           }
         </script>
         <?php
-                    require_once('config\commande.php');
+                      require_once __DIR__. '/config\commande.php';
+
 
                     $Categorie = afficherCategorie();
 
-                    $types = affichertype();
+                    require_once __DIR__. '/connect2.php';
 
 
+                    // on nettoie l'id envoy&
+                    
+                    $sql = 'SELECT * FROM `type` ;';
+                    
+                    //on prepare la requete
+                    $query = $db->prepare($sql);
+                    // on "acroche" les parametres (id)
+                         
+                    //on execute la requete
+                    $query->execute();
+                
+                    // on recupere la requete
+                    $types = $query->fetchAll();
+                    
                 ?>
         <div class="row flex-center min-vh-100 py-6">
           <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4"><a class="d-flex flex-center mb-4" href="../../../index.html"><img class="me-2" src="../../../assets/img/icons/spot-illustrations/falcon.png" alt="" width="58" /><span class="font-sans-serif fw-bolder fs-5 d-inline-block">falcon</span></a>
@@ -197,7 +214,7 @@ header('location:product-list.php');
                   <select name="type" id="" class="form-control" placeholder="">
                   <?php foreach($types as $type): ?>
 
-                  <option value="<?= $type->nom ?>" ><?= $type->nom ?></option>
+                  <option value="<?= $type['nom'] ?>" ><?= $type['nom'] ?></option>
                   <?php endforeach; ?>   
                   </select><br><br> 
                   

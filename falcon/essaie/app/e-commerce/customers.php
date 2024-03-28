@@ -1,7 +1,7 @@
 <?php
 
 // inclure la connexion a la base 
-require_once('connect2.php');
+require_once __DIR__. '/connect2.php';
 $sql = 'SELECT* FROM `custumer`';
 
 // on prepqre lq requete
@@ -12,7 +12,9 @@ $query->execute();
 
 // on stoce le resultat dans le tableau associatif
 $result = $query->fetchAll(pdo::FETCH_ASSOC);
- require_once('close.php');
+require_once __DIR__. '/close.php';
+
+ 
 ?>
         <?php
           if(!empty($_session['erreur'])) {
@@ -101,7 +103,7 @@ $result = $query->fetchAll(pdo::FETCH_ASSOC);
           }
         </script>
         <?php
-        require_once 'dashbord.php'
+                       require_once __DIR__. '/dashbord.php';
 
         ?>
         <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-xl" style="display: none;">

@@ -1,0 +1,27 @@
+.banner_sectb{
+    width: 100%;
+    float: left;
+    background-image: url(../images/hotdeal.png);
+    height: auto;
+    background-size: 100%;
+    padding: 10px 0px 25px 0px;
+    background-repeat: no-repeat;
+    background-color: rgba(245, 240, 240, 0.768);
+}
+.outstand_txt{
+    width: 100%;
+    float: left;
+    font-size: 60px;
+    color:red;
+    padding-bottom: 0px;
+}
+.coff_txt {
+    width: 100%;
+    float: left;
+    font-size: 70px;
+    color:rgb(251, 11, 19);
+    font-weight: bold;
+    padding-bottom: 0px;
+}
+
+

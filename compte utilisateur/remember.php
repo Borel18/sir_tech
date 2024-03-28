@@ -2,8 +2,8 @@
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-require_once 'include\db.php';
-require_once 'include\fonctions.php';
+require_once __DIR__. '/include/db.php';
+require_once __DIR__. '/include/fonctions.php';
 // verifier si le formulaire est vide ou pas vide et lemail egualement nest pas vide
 if (!empty($_POST) && !empty($_POST['email'])) {
   $query = "SELECT * FROM user WHERE email = ? AND confirmed_at IS NOT NULL";
@@ -40,7 +40,7 @@ if ($user) {
 }
 ?>
  <?php
-require_once 'include\header3.php';
+require_once __DIR__. '/include/header3.php';
 
 
   ?>
@@ -64,5 +64,6 @@ require_once 'include\header3.php';
 </div>
 </form>
   <?php
- require_once('C:\xampp\htdocs\sir_tech\compte utilisateur\include\footer3.php');
-  ?>
+require_once __DIR__. '/include/footer3.php';
+
+?>

@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__. '/include\header.php';
-require_once __DIR__. '/include\naviguation.php';
-require_once __DIR__. '/config\commande.php';
+require_once __DIR__. '/include/header.php';
+require_once __DIR__. '/include/naviguation.php';
+require_once __DIR__. '/config/commande.php';
 
 ?>
 <!-- BREADCRUMB -->
@@ -145,7 +145,7 @@ require_once __DIR__. '/connect2.php';
 									</div>
 								</div>
 <?php
-require_once __DIR__. '/config\commande.php';
+require_once __DIR__. '/config/commande.php';
 
 
 $Produits = afficher();
@@ -470,7 +470,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 
  <?php
-require_once __DIR__. '/config\commande.php';
+require_once __DIR__. '/config/commande.php';
 
  $Produits = afficher();
 
@@ -573,5 +573,5 @@ require_once __DIR__. '/config\commande.php';
 		<!-- /NEWSLETTER -->
 
 <?php
-require_once __DIR__. '/include\footer.php';
+require_once __DIR__. '/include/footer.php';
 ?>

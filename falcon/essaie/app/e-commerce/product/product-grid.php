@@ -3,7 +3,7 @@
 // demarer la session
 session_start();
 // inclure la connexion a la base 
-require_once('connect2.php');
+require_once __DIR__. '/connect2.php';
 $sql = 'SELECT* FROM `produits`';
 
 // on prepqre lq requete
@@ -14,8 +14,9 @@ $query->execute();
 
 // on stoce le resultat dans le tableau associatif
 $result = $query->fetchAll(pdo::FETCH_ASSOC);
- require_once('close.php');
-?>
+require_once __DIR__. '/close.php';
+
+ ?>
 
         <?php
           if(!empty($_session['erreur'])) {
@@ -106,8 +107,9 @@ $result = $query->fetchAll(pdo::FETCH_ASSOC);
           }
         </script>
        <?php
-        require_once 'dashbord.php'
+require_once __DIR__. '/dashbord.php';
 
+       
         ?>
         <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-xl" style="display: none;">
           <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarStandard" aria-controls="navbarStandard" aria-expanded="false" aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>

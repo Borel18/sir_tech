@@ -1,3 +1,3 @@
 <?php
-echo("bnjour tout le monde")
+echo("commande passé avec success")
 ?>

@@ -5,8 +5,7 @@ session_start();
  
 // est ce que l'id existe et nest pas vide dans lurl
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect2.php');
-
+  require_once __DIR__. '/connect2.php';
          // on nettoie l'id envoye
          $id = strip_tags($_GET['id']);
 
@@ -107,7 +106,7 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
           }
         </script>
         <?php
-        require_once 'dashbord.php'
+                       require_once __DIR__. '/dashbord.php';
 
         ?>
         <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-xl" style="display: none;">

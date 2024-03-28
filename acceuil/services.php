@@ -54,6 +54,6 @@ require_once __DIR__. '/include/header.php';
       </div>
       <!-- services section end -->
       <?php
-require_once __DIR__. '/include\footer.php';
+require_once __DIR__. '/include/footer.php';
 
 ?>

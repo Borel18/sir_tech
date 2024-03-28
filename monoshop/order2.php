@@ -1,3 +1,3 @@
 <?php
-echo("au revoir tout le monde")
+echo("echec de la commande")
 ?>

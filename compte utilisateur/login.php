@@ -1,9 +1,9 @@
 <?php
 session_start();
-    require_once 'include\header3.php';
-    require_once 'include\db.php';
-    require_once 'include\fonctions.php';
-    
+require_once __DIR__. '/include/header3.php';
+require_once __DIR__. '/include/db.php';
+require_once __DIR__. '/include/fonctions.php';
+
     reconnect_auto();  
 
     if (!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) {
@@ -68,6 +68,7 @@ session_start();
                     </div>
                   </form>
     <?php
-require_once 'include\footer3.php';
+require_once __DIR__. '/include/footer3.php';
+
 ?>
 

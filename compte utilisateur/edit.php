@@ -2,10 +2,14 @@
 session_start();
 
 if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
- include "db_conn.php";
- require_once 'include\db.php';
- include 'php/user.php';
+    require_once __DIR__. '/db_conn.php';
+	
+    require_once __DIR__. '/include/db.php';
 
+    require_once __DIR__. '/php/user.php';
+
+
+ 
  $user = getUserById($_SESSION['auth']->id,$conn);
 
  ?>

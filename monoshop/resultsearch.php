@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__. '/include\header.php';
+require_once __DIR__. '/include/header.php';
 
 if(isset($_GET['nom']) && !empty($_GET['nom'])){
 require_once __DIR__. '/connexion.php';
@@ -28,7 +28,7 @@ require_once __DIR__. '/connexion.php';
 }
 ?>
 <?php
-require_once __DIR__. '/include\naviguation.php';
+require_once __DIR__. '/include/naviguation.php';
 
 ?>
 
@@ -127,5 +127,5 @@ require_once __DIR__. '/include\naviguation.php';
 		</div>
 		<!-- /SECTION -->
 <?php
-require_once __DIR__. '/include\footer.php';
+require_once __DIR__. '/include/footer.php';
 ?>

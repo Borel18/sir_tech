@@ -3,9 +3,10 @@ session_start();
 
 if(isset($_POST['uname']) && 
    isset($_POST['pass'])){
+    require_once __DIR__. '/../db_conn.php';
 
-    include "../db_conn.php";
 
+   
     $uname = $_POST['uname'];
     $pass = $_POST['pass'];
 

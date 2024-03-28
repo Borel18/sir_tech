@@ -2,8 +2,9 @@
 
 if(session_status() == PHP_SESSION_NONE){
     session_start();
-    require_once 'C:\xampp\htdocs\sir_tech\compte utilisateur\include\db.php';
-}
+    require_once __DIR__. '/include/db.php';
+
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">

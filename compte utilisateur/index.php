@@ -1,14 +1,18 @@
 <?php
 session_start();
-    require_once 'include\fonctions.php';
+require_once __DIR__. '/include/fonctions.php';
+
     reconnect_auto();
     is_connect();
-    require_once 'include\header.php';
+require_once __DIR__. '/include/header.php';
+
 ?>
 <?php
 if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
-    include "db_conn.php";
-    include 'php/user.php';
+
+require_once __DIR__. '/db_conn.php';
+require_once __DIR__. '/php/user.php';
+
     $user = getUserById($_SESSION['auth']->id,$conn);
 
      
@@ -50,12 +54,12 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
 	?>
         
 <?php
-require_once 'include\footer3.php';
+require_once __DIR__. '/include/footer3.php';
 ?>
 <?php }else {
 	header("Location: login.php");
 	exit;
 } ?>
 <?php
-require_once 'include\footer.php';
+require_once __DIR__. '/include/footer.php';
 ?>

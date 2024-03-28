@@ -6,12 +6,13 @@ if (isset($_SESSION['auth']->id) && isset($_SESSION['auth']->fname)) {
    
 if(isset($_POST['fname']) && 
    isset($_POST['username']) ){
+      require_once __DIR__. '/../include/db.php';
         
-    include "..\include\db.php";
     
     $fname = $_POST['fname'];
     $username = $_POST['username'];
     $old_pp = $_POST['old_pp'];
+    $id = $_SESSION['auth']->id;
     
     
     if (empty($fname)) {
@@ -50,8 +51,8 @@ if(isset($_POST['fname']) &&
             
             
                // Insert into Database
-              $query= "UPDATE user SET fname = ?,username = ? ,pp = ? "; 
-              $pdo -> prepare($query)-> execute([$fname,$username,$new_img_name]);
+              $query= "UPDATE user SET fname = ?,username = ? ,pp = ? WHERE id = ?" ; 
+              $pdo -> prepare($query)-> execute([$fname,$username,$new_img_name,$id]);
               
               $_SESSION['auth']->fname= $fname;
                // $sql = "UPDATE user
@@ -78,9 +79,9 @@ if(isset($_POST['fname']) &&
 
         
       }else {
-        $sql = "UPDATE user SET fname=?, username=?";
-       	$stmt = $conn->prepare($sql);
-       	$stmt->execute([$fname, $username]);
+         $query= "UPDATE user SET fname = ?,username = ? WHERE id = ?" ; 
+              $pdo -> prepare($query)-> execute([$fname,$username,$id]);
+              
          
        	header("Location: ../edit.php?success=votre compte a ete modifié avec succes");
    	    exit;

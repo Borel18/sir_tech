@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-require_once 'include\db.php';
+require_once __DIR__. '/include/db.php';
+
 
 if (isset($_GET['id']) && isset($_GET['token'])) {
 
@@ -58,7 +59,9 @@ if($user){
 
 ?>
 <?php
-require_once 'include\header3.php';
+
+require_once __DIR__. '/include/header3.php';
+
 
 
   ?>
@@ -87,5 +90,5 @@ require_once 'include\header3.php';
 </div>
 </form>
   <?php
- require_once('C:\xampp\htdocs\sir_tech\compte utilisateur\include\footer3.php');
-  ?>
+require_once __DIR__. '/include/footer3.php';
+?>

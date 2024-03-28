@@ -1,13 +1,13 @@
 <?php
-require_once __DIR__. '/include\header.php';
-require_once __DIR__. '/config\commande.php';
+require_once __DIR__. '/include/header.php';
+require_once __DIR__. '/config/commande.php';
 
  $Categorie = afficherCategorie();
 
 
 ?>
 <?php
-require_once __DIR__. '/include\naviguation.php';
+require_once __DIR__. '/include/naviguation.php';
 
 ?>
 
@@ -18,7 +18,7 @@ require_once __DIR__. '/include\naviguation.php';
 		<!-- /HOT DEAL SECTION -->
 
 		<?php
-require_once __DIR__. '/config\commande.php';
+require_once __DIR__. '/config/commande.php';
 
  
  $Solde = afficherSolde();
@@ -128,6 +128,6 @@ require_once __DIR__. '/config\commande.php';
 		<!-- /SECTION -->
 
 <?php
-require_once __DIR__. '/include\footer.php';
+require_once __DIR__. '/include/footer.php';
 
 ?>

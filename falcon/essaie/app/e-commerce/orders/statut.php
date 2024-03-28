@@ -5,7 +5,8 @@ if (isset($_GET['id']) && !empty($_GET['id']) && isset($_GET['statut']) && !empt
     $id = strip_tags($_GET['id']);
     $statut = "annule";
     
-    require_once('connect.php');
+    require_once __DIR__. '/connect.php';
+
 
     $sql = 'SELECT * FROM `com_produit` WHERE `id` = :id AND statut=:statut ';
 

@@ -109,6 +109,24 @@
                         </li>
                       </ul>
                     </li>
+                    <li class="nav-item"><a class="nav-link dropdown-indicator" href="#categorie" data-bs-toggle="collapse" aria-expanded="false" aria-controls="e-commerce">
+                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">categorie</span></div>
+                      </a><!-- more inner pages-->
+                      <ul class="nav collapse false" id="product">
+                        <li class="nav-item"><a class="nav-link" href="../e-commerce/categorie/categorie-list.php" aria-expanded="false">
+                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">categorie list</span></div>
+                          </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../e-commerce/categorie/categorie-grid.php" aria-expanded="false">
+                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">categorie grid</span></div>
+                          </a><!-- more inner pages-->
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="../e-commerce/categorie/categorie-details.php" aria-expanded="false">
+                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">categorie details</span></div>
+                          </a><!-- more inner pages-->
+                        </li>
+                      </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link dropdown-indicator" href="#orders" data-bs-toggle="collapse" aria-expanded="false" aria-controls="e-commerce">
                         <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Orders</span></div>
                       </a><!-- more inner pages-->

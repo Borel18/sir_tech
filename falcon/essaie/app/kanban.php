@@ -70,7 +70,8 @@
           }
         </script>
        <?php
-        require_once 'dashbord.php'
+               require_once __DIR__. '/dashbord.php';
+
 
         ?>
         <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-xl" style="display: none;">

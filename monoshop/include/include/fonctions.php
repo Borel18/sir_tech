@@ -21,7 +21,8 @@ function reconnect_auto(){
         session_start();
     }
     if (isset($_COOKIE['remember']) && !isset($_SESSION['auth'])) {
-        require_once 'C:\xampp\htdocs\sir_tech\falcon\essaie\pages\authentication\card\include\db.php';
+        require_once __DIR__. '/../../../falcon/essaie/pages/authentication/card/include/db.php';
+
         if (!isset($pdo)) {
             global $pdo;
         }

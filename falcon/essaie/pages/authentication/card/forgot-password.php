@@ -2,8 +2,9 @@
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
-require_once 'include\db.php';
-require_once 'include\fonctions.php';
+require_once __DIR__. '/include/db.php';
+require_once __DIR__. '/include/fonctions.php';
+
     
 // verifier si le formulaire est vide ou pas vide et lemail egualement nest pas vide
 if (!empty($_POST) && !empty($_POST['email'])) {

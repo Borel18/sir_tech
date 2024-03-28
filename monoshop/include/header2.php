@@ -1,5 +1,4 @@
 <?php
-require '_header.php';
-// require '_header2.php';
+require_once __DIR__. '/../_header.php';
 ?>
 

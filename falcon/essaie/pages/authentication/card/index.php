@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once 'include\fonctions.php';
+require_once __DIR__. '/include/db.php';
+require_once __DIR__. '/include/fonctions.php';
 // var_dump($_COOKIE['remember']);
 //  exit;
 

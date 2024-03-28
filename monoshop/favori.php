@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__. '/include\fonctions.php';
-require_once __DIR__. '/include\header.php';
-require_once __DIR__. '/include\naviguation.php';
+require_once __DIR__. '/include/fonctions.php';
+require_once __DIR__. '/include/header.php';
+require_once __DIR__. '/include/naviguation.php';
 
  
 // reconnect_auto();
@@ -10,7 +10,7 @@ require_once __DIR__. '/include\naviguation.php';
 ?>
 <?php
 if(isset($_GET['del'])){
-require_once __DIR__. '/config\connexion.php';
+require_once __DIR__. '/config/connexion.php';
 
 	
 	$getid= (int)$_GET['del'];
@@ -25,6 +25,11 @@ require_once __DIR__. '/config\connexion.php';
 	$like->del($_GET['del']);
 }
 ?>
+<?php
+require_once __DIR__. '/config/commande.php';
+ $Categorie = afficherCategorie();
+?>
+
 <!-- SECTION -->
 <div class="section">
 			<!-- container -->
@@ -38,10 +43,12 @@ require_once __DIR__. '/config\connexion.php';
 							<h3 class="title">Favoris</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+								<?php foreach($Categorie as $categorie): ?>
+
+                                     <li><a   href="categorie.php?nom=<?= $categorie->nom ?>"><?= $categorie->nom ?></a></li>
+
+                                <?php endforeach; ?>
+
 								</ul>
 							</div>
 						</div>
@@ -61,6 +68,22 @@ require_once __DIR__. '/config\connexion.php';
 											 //  var_dump($ids);
 											if(empty($ids)){
 												$produits = array();
+
+
+												?>
+
+                                                <div style="
+                                                  height: 300px;
+												  justify-content: center;
+												  align-items: center;
+												  text_qlign:center;
+												  display: flex;
+												  margin : 0 ;
+												  ">
+													
+													<span class="new">aucun produit n'a ete ajouter en favorie</span>
+												</div>
+											<?php	
 											}else {
 												$produits = $DB->query('SELECT*FROM produits WHERE id IN ('.implode(',',$ids).')');
                                             	
@@ -124,6 +147,6 @@ require_once __DIR__. '/config\connexion.php';
 		</div>
 		<!-- /SECTION -->
         <?php
-require_once __DIR__. '/include\footer.php';
+require_once __DIR__. '/include/footer.php';
 		
 ?>

@@ -33,7 +33,10 @@ require_once __DIR__. '/include/naviguation.php';
 // require_once('include\naviguation.php');
 
 ?>
-
+<?php
+require_once __DIR__. '/config\commande.php';
+ $Categorie = afficherCategorie();
+?>
 <div class="section">
 			<!-- container -->
 			<div class="container">
@@ -46,10 +49,12 @@ require_once __DIR__. '/include/naviguation.php';
 							<h3 class="title">RESULT SEARCH</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
-									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-									<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-									<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-									<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+								<?php foreach($Categorie as $categorie): ?>
+
+                                   <li><a   href="categorie.php?nom=<?= $categorie->nom ?>"><?= $categorie->nom ?></a></li>
+
+                                <?php endforeach; ?>
+
 								</ul>
 							</div>
 						</div>
@@ -64,11 +69,35 @@ require_once __DIR__. '/include/naviguation.php';
 								<!-- tab -->
 								<div id="tab1" class="tab-pane active">
 									<div class="products-slick" data-nav="#slick-nav-1">
-                                    <?php foreach($produits as $produit): ?>
+
+                                    <?php 
+									if (empty($produits)) {
+
+										
+									?>
+									<div style="
+                                                  height: 300px;
+												  justify-content: center;
+												  align-items: center;
+												  text_qlign:center;
+												  display: flex;
+												  margin : 0 ;
+												  ">
+													
+													<span class="new">aucun produit ne correspond a cette categorie pour le moment</span>
+												</div>
+									<?php
+									}else {
+										
+									}
+									foreach($produits as $produit): 
+									?>
 										
 											<?php 
 											$id=$produit['id'];
-											if (require("connexion.php")) {
+
+
+											if (require_once __DIR__. '/connexion.php') {
 											$likes = $access->prepare("SELECT id_like FROM likes WHERE id_article =?");
 											$likes->execute(array($id));
 											$likes = $likes->rowCount();

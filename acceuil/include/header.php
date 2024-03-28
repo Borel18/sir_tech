@@ -17,6 +17,9 @@
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
       <!-- style2 css -->
       <link rel="stylesheet" href="css/style2.css">
+      <!-- style3 css -->
+      <link rel="stylesheet" href="css/style3.css">
+      
       <!-- style css -->
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <!-- Responsive-->

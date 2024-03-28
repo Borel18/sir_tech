@@ -2,7 +2,8 @@
 
 function afficher()
 {
-    if(require("connexion.php"))
+    
+    if(require_once __DIR__. '/connexion.php')
     {
         $req = $access->prepare("SELECT * FROM com_produit ORDER BY id DESC");
         $req->execute();

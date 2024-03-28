@@ -5,7 +5,8 @@ session_start();
  
 // est ce que l'id existe et nest pas vide dans lurl
 if(isset($_GET['id']) && !empty($_GET['id'])){
-    require_once('connect2.php');
+  require_once __DIR__. '/connect2.php';
+
 
          // on nettoie l'id envoye
          $id = strip_tags($_GET['id']);
@@ -116,11 +117,10 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
                   </div>
                   </div>
                 <?php
-                    require_once('config\commande.php');
+  require_once __DIR__. '/config\commande.php';
 
+                    
                     $Categorie = afficherCategorie();
-
-                    $types = affichertype();
 
 
                 ?>
